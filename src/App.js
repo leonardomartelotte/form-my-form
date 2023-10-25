@@ -1,23 +1,78 @@
-import logo from './logo.svg';
 import './App.css';
+import {Form} from "./lib/components";
 
 function App() {
+    const testForm = {
+        title: "Register",
+        subtitle: "Please fill out all fields",
+        submitButtonCaption: "Register",
+        fields: [
+            [
+                {
+                    kind: 'text',
+                    type: 'text',
+                    name: 'email',
+                    id: 'email',
+                    placeholder: 'email',
+                },
+                {
+                    kind: 'text',
+                    type: 'password',
+                    placeholder: 'password',
+                },
+            ],
+            [
+                {
+                    kind: 'select',
+                    name: 'gender',
+                    id: 'gender',
+                    options: [
+                        {text: 'Male', value: 'male'},
+                        {text: 'Female', value: 'female'}
+                    ],
+                    placeholder: 'gender'
+                },
+                {
+                    kind: 'multi-select',
+                    name: 'items',
+                    id: 'items',
+                    options: [
+                        {text: 'Beans', value: 'beans'},
+                        {text: 'Rice', value: 'rice'},
+                        {text: 'Beans', value: 'beans'},
+                        {text: 'Rice', value: 'rice'},
+                        {text: 'Beans', value: 'beans'},
+                        {text: 'Rice', value: 'rice'}
+                    ],
+                    placeholder: 'ingredients'
+                },
+            ],
+            {
+                kind: 'text',
+                type: 'text',
+                name: 'address',
+                placeholder: 'address',
+            },
+            {
+                kind: 'text',
+                type: 'text',
+                placeholder: 'phone',
+            },
+            {
+                kind: 'button',
+                design: {
+                  backgroundColor: '#bbb',
+                  color: '#000',
+                  border: '0',
+                  borderRadius: '5px',
+                },
+                caption: 'Submit',
+            }
+        ]
+    }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form setup={testForm}></Form>
     </div>
   );
 }
