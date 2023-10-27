@@ -32,15 +32,14 @@ const MultiSelect = (props) => {
         }
     }, [selectedOptions]);
 
-    return <>
-        <div className='multi-select-container'>
+    return <div className='multi-select-container'>
             <div className='multi-select-field' onClick={toggleDropdown} ref={element}>
                 <div>
                     {props.field.placeholder}&nbsp;
                     {selectedOptions.length > 0 && <>({selectedOptions.length})</>}
                 </div>
                 <div>
-                    <img src={ArrowDown} className={dropdownOpen ? 'rotate-arrow' : ''}/>
+                    <img src={ArrowDown} className={dropdownOpen ? 'rotate-arrow' : ''} alt=''/>
                 </div>
             </div>
             {dropdownOpen &&
@@ -59,8 +58,6 @@ const MultiSelect = (props) => {
                     ))}
                 </div>
             }
-
         </div>
-    </>
 }
 export default MultiSelect;

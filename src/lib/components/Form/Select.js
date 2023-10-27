@@ -1,11 +1,13 @@
 import React from 'react';
 import '../../../index.css';
 const Select = (props) => {
-    return <select defaultValue='placeholder'
+    return <select
                    className='select-field'
                    id={props.field.id}
                    name={props.field.name}
                    onChange={props.handleChange}
+                   regexPattern={props.field.regexPattern}
+                   aria-required={props.field.isRequired}
     >
         <option value="" className='placeholder'>{props.field.placeholder}</option>
         {
