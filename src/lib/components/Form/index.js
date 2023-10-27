@@ -16,7 +16,6 @@ const Form = (props) => {
         const form = formRef;
         let error = [];
         for (let i = 0; i < form.current.elements.length; i++) {
-
             // Check for errors on select fields
             if(form?.current?.elements[i]?.getAttribute('aria-required') && !form?.current?.elements[i].value.length){
                 error.push(1);
@@ -29,11 +28,11 @@ const Form = (props) => {
             }
         }
         if(error.length > 0){
-            setFormError({...formError, generalErrorMessage: props.setup.generalErrorMessage})
+            setFormError({...formError, generalErrorMessage: props.setup.generalErrorMessage});
         } else {
-            setFormError({})
+            setFormError({});
+            props.submittedData(formData);
         }
-        console.log("-> formData", formData);
     }
 
     const checkErrors = (target, error, errorMessage) => {
@@ -58,10 +57,6 @@ const Form = (props) => {
             [target.id]: target.value,
         });
     }
-
-    useEffect(() => {
-        console.log("-> formError", formError);
-    }, [formError]);
 
     // Prepares each field for the form
     const generateFormItem = (field, i) => {

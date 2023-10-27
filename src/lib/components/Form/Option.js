@@ -13,7 +13,7 @@ const Option = (props) => {
                            name={props.field.name}
                            value={field.value}
                            onChange={props.handleChange}
-                           regexPattern={props.field.regexPattern}
+                           required={props.field.isRequired}
                     />
                     {field.text}
                 </label>

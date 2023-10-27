@@ -43,6 +43,7 @@ code {
   margin: 5px;
   padding: 10px;
   width: calc(100% - 10px);
+  border: 1px solid #ccc;
 }
 .select-field {
   box-sizing: border-box;
@@ -50,6 +51,9 @@ code {
   padding: 10px;
   width: calc(100% - 10px);
   color: #757575;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border: 1px solid #ccc;
 }
 .multi-select-container {
   cursor: pointer;
@@ -59,7 +63,7 @@ code {
   padding: 10px;
   width: calc(100% - 10px);
   color: #757575;
-  border: 1px solid #767676;
+  border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 2px;
 }
@@ -75,7 +79,7 @@ code {
   right: -1px;
   left: -1px;
   top: 42px;
-  border: 1px solid #767676;
+  border: 1px solid #ccc;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -86,11 +90,14 @@ code {
   width: 90%;
   text-align: left;
 }
+.multi-select-field-closed{
+  display: none;
+}
 .options-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  border: 1px solid #767676;
+  border: 1px solid #ccc;
   box-sizing: border-box;
   margin: 5px;
   padding: 10px;

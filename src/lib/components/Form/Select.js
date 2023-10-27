@@ -6,7 +6,6 @@ const Select = (props) => {
                    id={props.field.id}
                    name={props.field.name}
                    onChange={props.handleChange}
-                   regexPattern={props.field.regexPattern}
                    aria-required={props.field.isRequired}
     >
         <option value="" className='placeholder'>{props.field.placeholder}</option>

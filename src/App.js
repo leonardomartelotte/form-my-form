@@ -53,6 +53,7 @@ function App() {
                     kind: 'multi-select',
                     name: 'hobbies',
                     id: 'hobbies',
+                    isRequired: true,
                     options: [
                         {text: 'Play Fortnite', value: 'fortnite'},
                         {text: 'Watch TV', value: 'tv'},
@@ -60,30 +61,18 @@ function App() {
                     ],
                 },
             ],
-            [
             {
                 title: 'Delivery',
                 kind: 'option',
                 name: 'delivery',
                 id: 'delivery',
-                regexPattern: /^.+$/,
+                // isRequired: true,
                 errorMessage: 'This field is required',
                 options: [
                     {text: 'Home', value: 'home'},
                     {text: 'Takeout', value: 'takeout'}
                 ],
             },
-                {
-                    title: 'Country',
-                    kind: 'option',
-                    name: 'country',
-                    id: 'country',
-                    options: [
-                        {text: 'USA', value: 'usa'},
-                        {text: 'Portugal', value: 'portugal'}
-                    ],
-                },
-                ],
             {
                 kind: 'button',
                 id: 'submit',
@@ -97,9 +86,12 @@ function App() {
             }
         ]
     }
+    const submittedData = (data) =>{
+        console.log("-> data", data);
+    }
   return (
     <div className="App">
-      <Form setup={sampleInputData}></Form>
+      <Form setup={sampleInputData} submittedData={submittedData}></Form>
     </div>
   );
 }

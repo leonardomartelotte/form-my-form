@@ -42,8 +42,7 @@ const MultiSelect = (props) => {
                     <img src={ArrowDown} className={dropdownOpen ? 'rotate-arrow' : ''} alt=''/>
                 </div>
             </div>
-            {dropdownOpen &&
-                <div className='multi-select-field-options'>
+            <div className={dropdownOpen ? 'multi-select-field-options' : ' multi-select-field-options multi-select-field-closed'}>
                     {props.field.options.map((option, index) => (
                         <label className='multi-select-label' key={index}>
                             <input
@@ -57,7 +56,6 @@ const MultiSelect = (props) => {
                         </label>
                     ))}
                 </div>
-            }
         </div>
 }
 export default MultiSelect;
