@@ -6,7 +6,6 @@ const Input = (props) => {
     if (props.field.regexPattern) {
       error = !props.field.regexPattern.test(element.target.value);
     }
-
     props.handleChange({
       ...element,
       error: error,
@@ -22,8 +21,7 @@ const Input = (props) => {
         placeholder={props.field.placeholder}
         id={props.field.id}
         onChange={handleInputChange}
-        regexPattern={props.field.regexPattern}
-        errorMessage={props.field.errorMessage}
+        regex={props.field.regexPattern}
         value={props.value}
       />
       <p className="field-error-message">{props.error}</p>

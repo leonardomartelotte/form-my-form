@@ -27,9 +27,9 @@ const Form = (props) => {
         error.push(form?.current?.elements[i].getAttribute("id"));
       }
       // Check for errors on input text
-      if (form?.current?.elements[i]?.getAttribute("regexPattern")) {
+      if (form?.current?.elements[i]?.getAttribute("regex")) {
         if (
-          !eval(form?.current?.elements[i]?.getAttribute("regexPattern")).test(
+          !eval(form?.current?.elements[i]?.getAttribute("regex")).test(
             form?.current?.elements[i].getAttribute("type")
               ? form.current.elements[i].getAttribute("value")
               : form?.current?.elements[i].value,
@@ -135,7 +135,7 @@ const Form = (props) => {
           // If form items are grouped (show side by side):
           if (field.length) {
             return (
-              <div className="field-group">
+              <div key={i} className="field-group">
                 {field.map((field, i) => {
                   return generateFormItem(field, i);
                 })}

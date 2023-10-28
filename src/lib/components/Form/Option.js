@@ -7,10 +7,9 @@ const Option = (props) => {
       <p className="options-container-title">{props.field.title}:</p>
       {props.field.options.map((field, i) => {
         return (
-          <label className="options-items">
+          <label className="options-items" key={field.value}>
             <input
               type="radio"
-              key={i}
               id={props.field.name + i}
               name={props.field.name}
               value={field.value}
