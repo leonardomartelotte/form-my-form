@@ -1,20 +1,27 @@
-import React from "react";
-import "../../../index.css";
-const Select = props => {
-  return /*#__PURE__*/React.createElement("select", {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+require("../../../index.css");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Select = function Select(props) {
+  return /*#__PURE__*/_react.default.createElement("select", {
     className: "select-field",
     id: props.field.id,
     name: props.field.name,
     onChange: props.handleChange,
     "aria-required": props.field.isRequired
-  }, /*#__PURE__*/React.createElement("option", {
+  }, /*#__PURE__*/_react.default.createElement("option", {
     value: "",
     className: "placeholder"
-  }, props.field.placeholder), props.field.options.map((field, i) => {
-    return /*#__PURE__*/React.createElement("option", {
+  }, props.field.placeholder), props.field.options.map(function (field, i) {
+    return /*#__PURE__*/_react.default.createElement("option", {
       key: i,
       value: field.value
     }, field.text);
   }));
 };
-export default Select;
+var _default = exports.default = Select;

@@ -1,7 +1,14 @@
-import React from "react";
-import "../../../index.css";
-const Button = props => {
-  return /*#__PURE__*/React.createElement("button", {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+require("../../../index.css");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var Button = function Button(props) {
+  return /*#__PURE__*/_react.default.createElement("button", {
     className: "input-button",
     style: {
       backgroundColor: props.field.design.backgroundColor,
@@ -14,4 +21,4 @@ const Button = props => {
     id: props.field.id
   }, props.field.caption);
 };
-export default Button;
+var _default = exports.default = Button;
