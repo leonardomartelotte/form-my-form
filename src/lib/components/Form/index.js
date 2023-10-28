@@ -16,12 +16,15 @@ const Form = (props) => {
     const form = formRef;
     let error = [];
     for (let i = 0; i < form.current.elements.length; i++) {
-      // Check for errors on select fields
+      // Reset error border effect
+      document.getElementById(
+        form?.current?.elements[i].getAttribute("id"),
+      ).style.border = "";
       if (
         form?.current?.elements[i]?.getAttribute("aria-required") &&
         !form?.current?.elements[i].value.length
       ) {
-        error.push(1);
+        error.push(form?.current?.elements[i].getAttribute("id"));
       }
       // Check for errors on input text
       if (form?.current?.elements[i]?.getAttribute("regexPattern")) {
@@ -32,10 +35,15 @@ const Form = (props) => {
               : form?.current?.elements[i].value,
           )
         ) {
-          error.push(1);
+          error.push(form?.current?.elements[i].getAttribute("id"));
         }
       }
     }
+    // Apply error border effect
+    error.map((e) => {
+      document.getElementById(e).style.border = "1px solid #f00";
+    });
+
     if (error.length > 0) {
       setFormError({
         ...formError,

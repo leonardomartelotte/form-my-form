@@ -11,7 +11,7 @@ const Option = (props) => {
             <input
               type="radio"
               key={i}
-              id={props.field.name}
+              id={props.field.name + i}
               name={props.field.name}
               value={field.value}
               onChange={props.handleChange}

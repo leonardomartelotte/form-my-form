@@ -60,9 +60,10 @@ const MultiSelect = (props) => {
             : " multi-select-field-options multi-select-field-closed"
         }
       >
-        {props.field.options.map((option, index) => (
-          <label className="multi-select-label" key={index}>
+        {props.field.options.map((option, i) => (
+          <label className="multi-select-label" key={i}>
             <input
+              id={props.field.id + i}
               type="checkbox"
               value={option.value}
               name={props.field.name}
