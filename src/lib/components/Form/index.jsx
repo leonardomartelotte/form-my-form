@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useState } from "react";
-import "../../../index.css";
+import "../../index.css";
 import Button from "./Button";
 import Input from "./Input";
 import Select from "./Select";

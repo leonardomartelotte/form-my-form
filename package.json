@@ -1,6 +1,6 @@
 {
   "name": "form-my-form",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Form component for your React application",
   "author": "Leonardo Martelotte",
   "keywords": ["react", "components", "form", "ui"],
@@ -23,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist && cp index.css dist/ && cp -r src/lib/composables dist/ && cp -r src/lib/svg dist/ && babel src/lib/components -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist && cp src/lib/index.css dist/ && cp -r src/lib/composables dist/ && cp -r src/lib/svg dist/ && babel src/lib/components -d dist --copy-files"
   },
   "eslintConfig": {
     "extends": [

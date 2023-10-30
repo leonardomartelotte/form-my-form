@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
-require("../../../index.css");
+require("../../index.css");
 var _arrowDown = _interopRequireDefault(require("../../svg/arrow-down.svg"));
 var _useClickOutside = _interopRequireDefault(require("../../composables/useClickOutside"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }

@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
-require("../../../index.css");
+require("../../index.css");
 var _Button = _interopRequireDefault(require("./Button"));
 var _Input = _interopRequireDefault(require("./Input"));
 var _Select = _interopRequireDefault(require("./Select"));

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "../../../index.css";
+import "../../index.css";
 import ArrowDown from "../../svg/arrow-down.svg";
 import useClickOutside from "../../composables/useClickOutside";
 
