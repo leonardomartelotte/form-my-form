@@ -4,9 +4,9 @@ Every time when starting a new project I end up by realizing how much work it ta
 
 This time I got tired and decided to create this package, so that I can easily use it in multiple projects - so can you :)
 
-<b>form-my-form</b> is a <b>React</b> package for easily bringing forms into life on your application.
+<b>`form-my-form`</b> is a <b>`React`</b> package for easily bringing forms into life on your application.
 
-It's still in v0.1.12 so there's still some stuff to cover. So... Coming in the next weeks:
+It's still in `v0.1.12` so there's still some stuff to cover. So... Coming in the next weeks:
 
 - Improvement in error handling
 
@@ -20,20 +20,27 @@ Hope you like it!
 # Docs
 
 Installing: 
-<br>`npm i form-my-form`
+```bash 
+npm i form-my-form
+```
 
 Importing:
-<br>`import { Form } from "form-my-form/dist";`
+```javascript 
+import { Form } from "form-my-form/dist"
+```
 
-Using:
-<br>`<Form setup={sampleInputData} submittedData={submittedData}/>`
+Usage:
+```jsx
+<Form setup={sampleInputData} submittedData={submittedData}/
+```
+
 
 Props `setup` and `submittedData` are required, being:
 
 * On `submittedData` you'll get an object with all submitted form data;
 * On `setup` you'll pass the fields you want to be shown in the form, with rules and error messages. Here is an example:
 
-```
+```javascript
 const sampleInputData = {
         title: "Register",
         subtitle: "Please fill out all fields",
