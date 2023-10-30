@@ -1,4 +1,4 @@
-import { Form } from "./lib/components";
+import { Form } from "./lib";
 
 function App() {
   const sampleInputData = {

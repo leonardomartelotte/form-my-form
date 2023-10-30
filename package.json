@@ -1,6 +1,6 @@
 {
   "name": "form-my-form",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Form component for your React application",
   "author": "Leonardo Martelotte",
   "keywords": ["react", "components", "form", "ui"],
