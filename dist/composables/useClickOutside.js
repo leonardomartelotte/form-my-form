@@ -1,23 +1,21 @@
-import { useEffect } from "react";
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = require("react");
 function useClickOutside(ref, callback) {
-  useEffect(() => {
+  (0, _react.useEffect)(function () {
     function handleClickOutside(event) {
-      if (
-        ref.current &&
-        !ref.current.contains(event.target) &&
-        event.target.className !== "multi-select-label" &&
-        event.target.type !== "checkbox" &&
-        event.target.className !== "multi-select-field-options"
-      ) {
+      if (ref.current && !ref.current.contains(event.target) && event.target.className !== "multi-select-label" && event.target.type !== "checkbox" && event.target.className !== "multi-select-field-options") {
         callback();
       }
     }
-
     document.addEventListener("click", handleClickOutside);
-    return () => {
+    return function () {
       document.removeEventListener("click", handleClickOutside);
     };
   }, [ref, callback]);
 }
-export default useClickOutside;
+var _default = exports.default = useClickOutside;
