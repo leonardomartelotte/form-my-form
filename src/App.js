@@ -4,7 +4,6 @@ function App() {
   const sampleInputData = {
     title: "Register",
     subtitle: "Please fill out all fields",
-    submitButtonCaption: "Register",
     generalErrorMessage: "Please fill required fields",
     formDesign: {
       backgroundColor: "#caf0f8",

@@ -29,7 +29,7 @@ const MultiSelect = (props) => {
   useEffect(() => {
     if (eRef.current) {
       props.handleChange({
-        target: { id: eRef.current.target.name, value: selectedOptions },
+        target: { name: eRef.current.target.name, value: selectedOptions },
       });
     }
   }, [selectedOptions]);

@@ -1,4 +1,4 @@
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useState } from "react";
 import "../../index.css";
 import Button from "./Button";
 import Input from "./Input";
@@ -43,7 +43,7 @@ const Form = (props) => {
     }
     // Apply error border effect
     error.map((e) => {
-      document.getElementById(e).style.border = "1px solid #f00";
+      return (document.getElementById(e).style.border = "1px solid #f00");
     });
 
     if (error.length > 0) {
@@ -114,6 +114,7 @@ const Form = (props) => {
             key={i}
             field={field}
             handleChange={handleChange}
+            value={formData[field.name]}
             design={props.setup.formDesign}
           />
         );
