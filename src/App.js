@@ -35,8 +35,8 @@ function App() {
       {
         kind: "text",
         type: "text",
-        name: "name",
         id: "name",
+        name: "name",
         placeholder: "Name",
         regexPattern: /^.{3,}$/,
         errorMessage: "This field is required",
@@ -45,8 +45,8 @@ function App() {
         {
           kind: "text",
           type: "text",
-          name: "email",
           id: "email",
+          name: "email",
           placeholder: "Email",
           regexPattern: /^\S+@\S+\.\S+$/,
           errorMessage: "This is not a valid email",
@@ -56,14 +56,15 @@ function App() {
           kind: "text",
           type: "password",
           id: "password",
+          name: "password",
           placeholder: "password",
         },
       ],
       [
         {
           kind: "select",
-          name: "gender",
           id: "gender",
+          name: "gender",
           options: [
             { text: "Male", value: "male" },
             { text: "Female", value: "female" },
@@ -75,8 +76,8 @@ function App() {
         {
           placeholder: "Hobbies",
           kind: "multi-select",
-          name: "hobbies",
           id: "hobbies",
+          name: "hobbies",
           isRequired: true,
           options: [
             { text: "Play Fortnite", value: "fortnite" },
@@ -88,8 +89,8 @@ function App() {
       {
         title: "Delivery",
         kind: "option",
-        name: "delivery",
         id: "delivery",
+        name: "delivery",
         // isRequired: true,
         errorMessage: "This field is required",
         options: [
@@ -102,7 +103,7 @@ function App() {
         id: "submit",
         design: {
           backgroundColor: "#00b4d8",
-          color: "#000",
+          color: "#fff",
           border: "0",
           borderRadius: "2px",
         },

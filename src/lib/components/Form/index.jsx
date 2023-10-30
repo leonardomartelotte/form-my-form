@@ -80,7 +80,7 @@ const Form = (props) => {
     checkErrors(target, error, errorMessage);
     setFormData({
       ...formData,
-      [target.id]: target.value,
+      [target.name]: target.value,
     });
   };
 
