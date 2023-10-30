@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Form", {
   enumerable: true,
   get: function get() {
-    return _Form.default;
+    return _index.default;
   }
 });
-var _Form = _interopRequireDefault(require("./Form"));
+var _index = _interopRequireDefault(require("./components/Form/index"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
