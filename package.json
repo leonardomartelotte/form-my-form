@@ -1,12 +1,20 @@
 {
   "name": "form-my-form",
-  "version": "0.1.4",
+  "version": "0.1.5",
+  "description": "Form component for your React application",
+  "author": "Leonardo Martelotte",
+  "keywords": ["react", "components", "form", "ui"],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardomartelotte/form-my-form.git"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -37,9 +45,16 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@babel/preset-react": "^7.22.15",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "babel": {
     "presets": [
