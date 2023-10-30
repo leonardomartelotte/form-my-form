@@ -4,6 +4,8 @@ Every time when starting a new project I end up by realizing how much work it ta
 
 This time I got tired and decided to create this package, so that I can easily use it in multiple projects - so can you :)
 
+<b>form-my-form</b> is a <b>React</b> package for easily bringing forms into life on your application.
+
 It's still in v0.1.10 so there's still some stuff to cover. So... Coming in the next weeks:
 
 - Improvement in error handling
