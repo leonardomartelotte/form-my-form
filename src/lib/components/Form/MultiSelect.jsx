@@ -35,7 +35,10 @@ const MultiSelect = (props) => {
   }, [selectedOptions]);
 
   return (
-    <div className="multi-select-container">
+    <div
+      className="multi-select-container"
+      style={props.design.multiSelectField}
+    >
       <div
         className="multi-select-field"
         onClick={toggleDropdown}
@@ -59,6 +62,7 @@ const MultiSelect = (props) => {
             ? "multi-select-field-options"
             : " multi-select-field-options multi-select-field-closed"
         }
+        style={props.design.multiSelectField}
       >
         {props.field.options.map((option, i) => (
           <label className="multi-select-label" key={i}>

@@ -45,6 +45,7 @@ code {
   padding: 10px;
   width: calc(100% - 10px);
   border: 1px solid #ccc;
+  border-radius: 2px;
 }
 .select-field {
   box-sizing: border-box;

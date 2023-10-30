@@ -8,6 +8,7 @@ const Select = (props) => {
       name={props.field.name}
       onChange={props.handleChange}
       aria-required={props.field.isRequired}
+      style={props.design.selectField}
     >
       <option value="" className="placeholder">
         {props.field.placeholder}

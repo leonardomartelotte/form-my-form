@@ -3,7 +3,7 @@ import "../../index.css";
 
 const Option = (props) => {
   return (
-    <div className="options-container">
+    <div className="options-container" style={props.design.optionField}>
       <p className="options-container-title">{props.field.title}:</p>
       {props.field.options.map((field, i) => {
         return (

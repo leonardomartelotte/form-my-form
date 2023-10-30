@@ -6,6 +6,31 @@ function App() {
     subtitle: "Please fill out all fields",
     submitButtonCaption: "Register",
     generalErrorMessage: "Please fill required fields",
+    formDesign: {
+      backgroundColor: "#caf0f8",
+      border: "1px solid #90e0ef",
+      borderRadius: "2px",
+      inputField: {
+        backgroundColor: "#fff",
+        border: "1px solid #90e0ef",
+        borderRadius: "2px",
+      },
+      selectField: {
+        backgroundColor: "#fff",
+        border: "1px solid #90e0ef",
+        borderRadius: "2px",
+      },
+      multiSelectField: {
+        backgroundColor: "#fff",
+        border: "1px solid #90e0ef",
+        borderRadius: "2px",
+      },
+      optionField: {
+        backgroundColor: "#fff",
+        border: "1px solid #90e0ef",
+        borderRadius: "2px",
+      },
+    },
     fields: [
       {
         kind: "text",
@@ -76,10 +101,10 @@ function App() {
         kind: "button",
         id: "submit",
         design: {
-          backgroundColor: "#bbb",
+          backgroundColor: "#00b4d8",
           color: "#000",
           border: "0",
-          borderRadius: "5px",
+          borderRadius: "2px",
         },
         caption: "Submit",
       },

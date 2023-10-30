@@ -20,7 +20,7 @@ const Form = (props) => {
       if (form?.current?.elements[i].getAttribute("class") !== "input-button") {
         document.getElementById(
           form?.current?.elements[i].getAttribute("id"),
-        ).style.border = "";
+        ).style.border = props.setup.formDesign.inputField.border;
       }
       if (
         form?.current?.elements[i]?.getAttribute("aria-required") &&
@@ -95,6 +95,7 @@ const Form = (props) => {
             value={formData[field.name]}
             error={formError[field.name]}
             handleChange={handleChange}
+            design={props.setup.formDesign}
           />
         );
       case "select":
@@ -104,11 +105,17 @@ const Form = (props) => {
             field={field}
             handleChange={handleChange}
             value={formData[field.name]}
+            design={props.setup.formDesign}
           />
         );
       case "multi-select":
         return (
-          <MultiSelect key={i} field={field} handleChange={handleChange} />
+          <MultiSelect
+            key={i}
+            field={field}
+            handleChange={handleChange}
+            design={props.setup.formDesign}
+          />
         );
       case "option":
         return (
@@ -117,6 +124,7 @@ const Form = (props) => {
             field={field}
             handleChange={handleChange}
             value={formData[field.name]}
+            design={props.setup.formDesign}
           />
         );
       case "button":
@@ -127,7 +135,14 @@ const Form = (props) => {
   };
   // Returns form with full design
   return (
-    <div className="form-div">
+    <div
+      className="form-div"
+      style={{
+        backgroundColor: props.setup.formDesign.backgroundColor,
+        border: props.setup.formDesign.border,
+        borderRadius: props.setup.formDesign.borderRadius,
+      }}
+    >
       <div className="title-div">
         <div className="title">{props.setup.title}</div>
         <div className="subtitle">{props.setup.subtitle}</div>

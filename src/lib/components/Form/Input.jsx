@@ -23,6 +23,7 @@ const Input = (props) => {
         onChange={handleInputChange}
         regex={props.field.regexPattern}
         value={props.value}
+        style={props.design.inputField}
       />
       <p className="field-error-message">{props.error}</p>
     </div>
