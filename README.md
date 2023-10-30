@@ -6,7 +6,7 @@ This time I got tired and decided to create this package, so that I can easily u
 
 <b>form-my-form</b> is a <b>React</b> package for easily bringing forms into life on your application.
 
-It's still in v0.1.11 so there's still some stuff to cover. So... Coming in the next weeks:
+It's still in v0.1.12 so there's still some stuff to cover. So... Coming in the next weeks:
 
 - Improvement in error handling
 
@@ -132,7 +132,7 @@ I invite you to collaborate with me on this open-source project. Here's how to g
 
 - Pull Request: Create a pull request to propose your changes.
 
-- Review: We'll review your contribution and discuss it with you.
+- Review: I'll review your contribution and discuss it with you.
 
 - Contribute Respectfully: Be respectful and constructive in your interactions.
 

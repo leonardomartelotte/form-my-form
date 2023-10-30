@@ -17,9 +17,11 @@ const Form = (props) => {
     let error = [];
     for (let i = 0; i < form.current.elements.length; i++) {
       // Reset error border effect
-      document.getElementById(
-        form?.current?.elements[i].getAttribute("id"),
-      ).style.border = "";
+      if (form?.current?.elements[i].getAttribute("class") !== "input-button") {
+        document.getElementById(
+          form?.current?.elements[i].getAttribute("id"),
+        ).style.border = "";
+      }
       if (
         form?.current?.elements[i]?.getAttribute("aria-required") &&
         !form?.current?.elements[i].value.length
