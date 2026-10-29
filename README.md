@@ -1,173 +1,155 @@
-# Welcome to form-my-form! 
+# form-my-form
 
-Every time when starting a new project I end up by realizing how much work it takes to create forms.
+`form-my-form` is a customizable form component for React 19, written in TypeScript. It supports text inputs, selects, multi-selects, radio groups, grouped fields, validation, and a configurable color palette.
 
-This time I got tired and decided to create this package, so that I can easily use it in multiple projects - so can you :)
+## Requirements
 
-<b>`form-my-form`</b> is a <b>`React`</b> package for easily bringing forms into life on your application.
+- React 19
+- Node.js 20.19 or newer for local development
 
-It's still in the early versions so there are still some stuff to cover. So... Coming in the next weeks:
+## Installation
 
-- Improvement in error handling
-
-... And next:
-
-- Typescript
-- Colors customisation
-
-Hope you like it!
-
-# Docs
-
-Installing: 
-```bash 
-npm i form-my-form
+```bash
+npm install form-my-form
 ```
 
-Importing:
-```javascript 
-import { Form } from "form-my-form/dist"
+Import the component and its stylesheet:
+
+```tsx
+import { Form } from "form-my-form";
+import "form-my-form/style.css";
 ```
 
-Usage:
-```jsx
-<Form setup={sampleInputData} submittedData={submittedData}/>
-```
+## Usage
 
+```tsx
+import { Form } from "form-my-form";
+import type { FormSetup, FormValues } from "form-my-form";
+import "form-my-form/style.css";
 
-Props `setup` and `submittedData` are required, being:
-
-* On `submittedData` you'll get an object with all submitted form data;
-* On `setup` you'll pass the fields you want to be shown in the form, with rules and error messages. Here is an example:
-
-```javascript
-const sampleInputData = {
-    title: "Register",
-    subtitle: "Please fill out all fields",
-    submitButtonCaption: "Register",
-    generalErrorMessage: "Please fill required fields",
-    formDesign: {
-        backgroundColor: "#caf0f8",
-        border: "1px solid #90e0ef",
-        borderRadius: "2px",
-        inputField: {
-            backgroundColor: "#fff",
-            border: "1px solid #90e0ef",
-            borderRadius: "2px",
-        },
-        selectField: {
-            backgroundColor: "#fff",
-            border: "1px solid #90e0ef",
-            borderRadius: "2px",
-        },
-        multiSelectField: {
-            backgroundColor: "#fff",
-            border: "1px solid #90e0ef",
-            borderRadius: "2px",
-        },
-        optionField: {
-            backgroundColor: "#fff",
-            border: "1px solid #90e0ef",
-            borderRadius: "2px",
-        },
+const setup: FormSetup = {
+  title: "Register",
+  subtitle: "Create an account",
+  generalErrorMessage: "Please review the form.",
+  colors: {
+    formBackground: "#ffffff",
+    formBorder: "#d8e1e8",
+    text: "#172b3a",
+    mutedText: "#526777",
+    fieldBackground: "#ffffff",
+    fieldText: "#172b3a",
+    fieldBorder: "#b8c8d4",
+    primary: "#087ea4",
+    primaryText: "#ffffff",
+    error: "#c62828",
+    dropdownBackground: "#ffffff",
+  },
+  fields: [
+    {
+      kind: "text",
+      type: "text",
+      id: "name",
+      name: "name",
+      placeholder: "Name",
+      isRequired: true,
+      regexPattern: /^.{3,}$/,
+      errorMessage: "Enter at least three characters.",
     },
-    fields: [
-        {
-            kind: "text",
-            type: "text",
-            id: "name",
-            name: "name",
-            placeholder: "Name",
-            regexPattern: /^.{3,}$/,
-            errorMessage: "This field is required",
-        },
-        [
-            {
-                kind: "text",
-                type: "text",
-                id: "email",
-                name: "email",
-                placeholder: "Email",
-                regexPattern: /^\S+@\S+\.\S+$/,
-                errorMessage: "This is not a valid email",
-            },
-
-            {
-                kind: "text",
-                type: "password",
-                id: "password",
-                name: "password",
-                placeholder: "password",
-            },
-        ],
-        [
-            {
-                kind: "select",
-                id: "gender",
-                name: "gender",
-                options: [
-                    { text: "Male", value: "male" },
-                    { text: "Female", value: "female" },
-                ],
-                placeholder: "Gender",
-                isRequired: true,
-                errorMessage: "This field is required",
-            },
-            {
-                placeholder: "Hobbies",
-                kind: "multi-select",
-                id: "hobbies",
-                name: "hobbies",
-                isRequired: true,
-                options: [
-                    { text: "Play Fortnite", value: "fortnite" },
-                    { text: "Watch TV", value: "tv" },
-                    { text: "Running", value: "running" },
-                ],
-            },
-        ],
-        {
-            title: "Delivery",
-            kind: "option",
-            id: "delivery",
-            name: "delivery",
-            // isRequired: true,
-            errorMessage: "This field is required",
-            options: [
-                { text: "Home", value: "home" },
-                { text: "Takeout", value: "takeout" },
-            ],
-        },
-        {
-            kind: "button",
-            id: "submit",
-            design: {
-                backgroundColor: "#00b4d8",
-                color: "#fff",
-                border: "0",
-                borderRadius: "2px",
-            },
-            caption: "Submit",
-        },
+    [
+      {
+        kind: "text",
+        type: "email",
+        id: "email",
+        name: "email",
+        placeholder: "Email",
+        isRequired: true,
+        regexPattern: /^\S+@\S+\.\S+$/,
+        errorMessage: "Enter a valid email address.",
+      },
+      {
+        kind: "text",
+        type: "password",
+        id: "password",
+        name: "password",
+        placeholder: "Password",
+        isRequired: true,
+      },
     ],
+    {
+      kind: "select",
+      id: "country",
+      name: "country",
+      placeholder: "Choose a country",
+      isRequired: true,
+      options: [
+        { text: "Canada", value: "ca" },
+        { text: "United Kingdom", value: "uk" },
+      ],
+    },
+    {
+      kind: "multi-select",
+      id: "interests",
+      name: "interests",
+      placeholder: "Choose your interests",
+      options: [
+        { text: "Reading", value: "reading" },
+        { text: "Running", value: "running" },
+      ],
+    },
+    {
+      kind: "option",
+      id: "delivery",
+      name: "delivery",
+      title: "Delivery preference",
+      isRequired: true,
+      options: [
+        { text: "Home delivery", value: "home" },
+        { text: "Pickup", value: "pickup" },
+      ],
+    },
+    { kind: "button", id: "submit", caption: "Register" },
+  ],
 };
+
+function handleSubmit(data: FormValues) {
+  console.log(data);
+}
+
+export function RegistrationForm() {
+  return <Form setup={setup} submittedData={handleSubmit} />;
+}
 ```
 
-Tip:
+Put fields in an array to display them side by side. The `colors` property accepts any subset of these CSS color values:
 
-- You can group form fields to be shown side by side by adding them together in an array, like email and password fields in the sampleInputData above.
+| Color                | Controls                                          |
+| -------------------- | ------------------------------------------------- |
+| `formBackground`     | Form surface                                      |
+| `formBorder`         | Form outline                                      |
+| `text`               | Main form text                                    |
+| `mutedText`          | Subtitle                                          |
+| `fieldBackground`    | Input and select surfaces                         |
+| `fieldText`          | Input, select, and multi-select text              |
+| `fieldBorder`        | Input, select, and option group outlines          |
+| `primary`            | Submit button, focus outline, and choice controls |
+| `primaryText`        | Submit button text                                |
+| `error`              | Validation messages                               |
+| `dropdownBackground` | Multi-select menu                                 |
 
-## Join me on improving it!
-I invite you to collaborate with me on this open-source project. Here's how to get involved:
+Any omitted color uses the built-in default. `FormSetup`, `FormColors`, `FormField`, and `FormValues` are exported for typed configuration and submit handlers. Text fields support optional `isRequired` and `regexPattern` validation; the `submittedData` callback receives values keyed by each field's `name`. Multi-select values are arrays of strings.
 
-- Fork: Start by forking our project on GitHub.
+## Development
 
-- Make Changes: Work on bug fixes, features, or documentation improvements.
+```bash
+npm install
+npm run dev
+npm test
+npm run typecheck
+npm run build
+```
 
-- Pull Request: Create a pull request to propose your changes.
+The library build writes JavaScript, CSS, and TypeScript declarations to `dist/`. The demo site is built into `demo-dist/`.
 
-- Review: I'll review your contribution and discuss it with you.
+## Contributing
 
-- Contribute Respectfully: Be respectful and constructive in your interactions.
-
-Your contributions make a difference. Let's build something great together!
+See [AGENTS.md](./AGENTS.md) for repository guidance for AI coding agents and contributors. Changes should include appropriate tests and keep public TypeScript types and documentation in sync.
