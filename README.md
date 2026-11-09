@@ -138,6 +138,26 @@ Put fields in an array to display them side by side. The `colors` property accep
 
 Any omitted color uses the built-in default. `FormSetup`, `FormColors`, `FormField`, and `FormValues` are exported for typed configuration and submit handlers. Text fields support optional `isRequired` and `regexPattern` validation; the `submittedData` callback receives values keyed by each field's `name`. Multi-select values are arrays of strings.
 
+## Editing existing data
+
+Pass values keyed by each field's `name` through `initialValues`. Text, select, and radio fields use strings; multi-select fields use arrays of strings:
+
+```tsx
+const initialValues: FormValues = {
+  name: "Morgan",
+  country: "ca",
+  interests: ["reading"],
+};
+
+<Form
+  setup={setup}
+  initialValues={initialValues}
+  submittedData={handleSubmit}
+/>;
+```
+
+For data loaded asynchronously, start with the values you have (or `{}`) and update `initialValues` when the backend response arrives. The form will populate the fields with the new values and clear any previous validation errors.
+
 ## Development
 
 ```bash

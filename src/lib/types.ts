@@ -77,5 +77,6 @@ export interface FormSetup {
 
 export interface FormProps {
   setup: FormSetup;
+  initialValues?: FormValues;
   submittedData: (data: FormValues) => void;
 }

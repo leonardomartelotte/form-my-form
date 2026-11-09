@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties, FormEvent } from "react";
 import Button from "./Button";
 import Input from "./Input";
@@ -50,12 +50,21 @@ const getFieldError = (
   return undefined;
 };
 
-export default function Form({ setup, submittedData }: FormProps) {
-  const [formData, setFormData] = useState<FormValues>({});
+export default function Form({
+  setup,
+  initialValues,
+  submittedData,
+}: FormProps) {
+  const [formData, setFormData] = useState<FormValues>(initialValues ?? {});
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
   const [generalError, setGeneralError] = useState("");
   const fields = useMemo(() => getFields(setup.fields), [setup.fields]);
   const colors = { ...defaultColors, ...setup.colors };
+  useEffect(() => {
+    setFormData(initialValues ?? {});
+    setFieldErrors({});
+    setGeneralError("");
+  }, [initialValues]);
   const colorStyles = Object.fromEntries(
     Object.entries(colors).map(([name, value]) => [
       `--form-${name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`,

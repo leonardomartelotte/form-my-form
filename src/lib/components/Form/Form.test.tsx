@@ -34,6 +34,13 @@ const setup: FormSetup = {
       options: [{ text: "Music", value: "music" }],
     },
     {
+      kind: "option",
+      id: "delivery",
+      name: "delivery",
+      title: "Delivery",
+      options: [{ text: "Pickup", value: "pickup" }],
+    },
+    {
       kind: "button",
       id: "submit",
       caption: "Submit",
@@ -71,6 +78,62 @@ describe("Form", () => {
       country: "ca",
       interests: ["music"],
     });
+  });
+
+  it("prefills every field type and submits the initial values", () => {
+    const submittedData = vi.fn();
+    render(
+      <Form
+        setup={setup}
+        initialValues={{
+          name: "Morgan",
+          country: "ca",
+          interests: ["music"],
+          delivery: "pickup",
+        }}
+        submittedData={submittedData}
+      />,
+    );
+
+    expect(screen.getByPlaceholderText("Name")).toHaveProperty(
+      "value",
+      "Morgan",
+    );
+    fireEvent.click(screen.getByRole("button", { name: /interests/i }));
+    expect(screen.getByLabelText("Music")).toHaveProperty("checked", true);
+    expect(screen.getByLabelText("Pickup")).toHaveProperty("checked", true);
+
+    fireEvent.click(screen.getByRole("button", { name: "Submit" }));
+    expect(submittedData).toHaveBeenCalledWith({
+      name: "Morgan",
+      country: "ca",
+      interests: ["music"],
+      delivery: "pickup",
+    });
+  });
+
+  it("updates values when asynchronously loaded initial values change", () => {
+    const submittedData = vi.fn();
+    const { rerender } = render(
+      <Form setup={setup} submittedData={submittedData} />,
+    );
+
+    fireEvent.change(screen.getByPlaceholderText("Name"), {
+      target: { value: "Draft" },
+    });
+    rerender(
+      <Form
+        setup={setup}
+        initialValues={{ name: "Morgan", country: "ca" }}
+        submittedData={submittedData}
+      />,
+    );
+
+    expect(screen.getByPlaceholderText("Name")).toHaveProperty(
+      "value",
+      "Morgan",
+    );
+    expect(screen.getByRole("combobox")).toHaveProperty("value", "ca");
   });
 
   it("shows field errors and does not submit invalid values", () => {
