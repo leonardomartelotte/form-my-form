@@ -33,6 +33,10 @@
     "type": "git",
     "url": "git+https://github.com/leonardomartelotte/form-my-form.git"
   },
+  "homepage": "https://github.com/leonardomartelotte/form-my-form#readme",
+  "bugs": {
+    "url": "https://github.com/leonardomartelotte/form-my-form/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "npm run typecheck && npm run build:lib && npm run build:demo",

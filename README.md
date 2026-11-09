@@ -1,5 +1,7 @@
 # form-my-form
 
+[![npm version](https://img.shields.io/npm/v/form-my-form)](https://www.npmjs.com/package/form-my-form)
+
 `form-my-form` is a customizable form component for React 19, written in TypeScript. It supports text inputs, selects, multi-selects, radio groups, grouped fields, validation, and a configurable color palette.
 
 ## Requirements
