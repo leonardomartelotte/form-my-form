@@ -15,6 +15,17 @@
 npm install form-my-form
 ```
 
+The release workflow also publishes a scoped copy to GitHub Packages as `@leonardomartelotte/form-my-form`. To install it, configure the GitHub npm registry and authenticate with a token that has `read:packages` access:
+
+```ini
+@leonardomartelotte:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+```bash
+npm install @leonardomartelotte/form-my-form
+```
+
 Import the component and its stylesheet:
 
 ```tsx
